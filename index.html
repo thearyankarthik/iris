@@ -897,7 +897,7 @@
         }
 
         .map-image-wrapper:hover .map-plan-img {
-            transform: scale(1.4);
+            transform: scale(1.03);
         }
 
         .map-overlay-hint {
@@ -923,8 +923,9 @@
         }
 
         .map-image-wrapper:hover .map-overlay-hint {
-            opacity: 0;
-            transform: translate(-50%, 10px);
+            background: var(--secondary-color);
+            color: var(--primary-color);
+            border-color: var(--secondary-color);
         }
 
         .invest-reasons {
@@ -1264,6 +1265,80 @@
                 font-size: 2.2rem;
             }
         }
+
+        /* Map Lightbox Modal Styles */
+        .map-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            height: 100dvh;
+            background: rgba(10, 8, 10, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            z-index: 10010;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .map-modal-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+        .map-modal-content {
+            max-width: 95%;
+            max-height: 90%;
+            position: relative;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            overflow: auto;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: #0d0a0d;
+        }
+        .map-modal-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: zoom-in;
+            margin: 0 auto;
+        }
+        .map-modal-img.zoomed {
+            max-height: none;
+            max-width: none;
+            width: 180%;
+            cursor: zoom-out;
+        }
+        .map-modal-close {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            color: #ffffff;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10015;
+        }
+        .map-modal-close:hover {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: var(--primary-color);
+            transform: scale(1.1) rotate(90deg);
+        }
     </style>
 </head>
 <body>
@@ -1356,11 +1431,11 @@
                         <div class="map-header">
                             <span class="map-badge">APCRDA Approved LPNO: 1168/0128/LP/PMDIMKLA/2024</span>
                         </div>
-                        <div class="map-image-wrapper">
+                        <div class="map-image-wrapper" onclick="openMapModal()">
                             <img src="images/project layout.jpg" alt="The Iris County Master Layout Plan" class="map-plan-img">
                             <div class="map-overlay-hint">
-                                <i class="fas fa-search-plus"></i>
-                                <span>Hover to Zoom Plan</span>
+                                <i class="fas fa-expand-arrows-alt"></i>
+                                <span>Click to View Full Plan</span>
                             </div>
                         </div>
                     </div>
@@ -1540,27 +1615,18 @@
                 <div class="enquiry-info slide-right">
                     <span class="enquiry-badge">Contact Advisory</span>
                     <h2>Secure Your Plot At <span>The Iris County</span></h2>
-                    <p>Ready to invest in Vijayawada's premium gated community? Fill out the form to request a callback, check pricing sheets, or schedule an onsite visit with our dedicated real estate advisors.</p>
+                    <p>Ready to invest in Vijayawada's premium gated community? Fill out the form to request a callback or schedule an onsite visit with our dedicated real estate advisors.</p>
                     
                     <div class="enquiry-contact-cards">
-                        <a href="tel:+918080808080" class="contact-card-item">
+                        <a href="tel:+919000259211" class="contact-card-item">
                             <div class="contact-card-icon">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
                             <div class="contact-card-details">
                                 <h4>Call Sales Office</h4>
-                                <p>+91 80808 08080</p>
+                                <p><i class="fas fa-phone-alt" style="font-size: 0.95rem; margin-right: 6px; color: var(--secondary-color);"></i> +91 90002 59211</p>
                             </div>
                         </a>
-                        <div class="contact-card-item">
-                            <div class="contact-card-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="contact-card-details">
-                                <h4>Response Window</h4>
-                                <p>Guaranteed within 15 Minutes</p>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
@@ -1576,22 +1642,8 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <div class="enquiry-form-group">
-                            <input type="email" id="enquiry-email" class="enquiry-form-input" placeholder="Email Address (Optional)">
+                            <input type="email" id="enquiry-email" class="enquiry-form-input" placeholder="Email Address" required>
                             <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="enquiry-form-group">
-                            <label style="display: block; color: var(--text-muted); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; font-family: var(--font-body);">Preferred Plot Size</label>
-                            <div class="plot-pills-container">
-                                <div class="plot-pill selected" onclick="selectPlotPill(this, '165 Sq.Yds')">165 Yds</div>
-                                <div class="plot-pill" onclick="selectPlotPill(this, '172 Sq.Yds')">172 Yds</div>
-                                <div class="plot-pill" onclick="selectPlotPill(this, '175 Sq.Yds')">175 Yds</div>
-                                <div class="plot-pill" onclick="selectPlotPill(this, 'Other')">Other</div>
-                            </div>
-                            <input type="hidden" id="enquiry-plot-size" value="165 Sq.Yds">
-                        </div>
-                        <div class="enquiry-form-group">
-                            <textarea id="enquiry-message" class="enquiry-form-input" placeholder="Message / Specific Queries (Optional)" style="height: 100px; resize: none; padding-top: 16px;"></textarea>
-                            <i class="fas fa-comment-dots"></i>
                         </div>
                         <button type="submit" class="enquiry-submit-btn">
                             <span>Request Callback</span>
@@ -1611,6 +1663,16 @@
             </div>
         </div>
     </footer>
+
+    <!-- Map Lightbox Modal -->
+    <div id="map-modal" class="map-modal-overlay" onclick="closeMapModal()">
+        <button class="map-modal-close" onclick="closeMapModal(event)">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="map-modal-content" onclick="event.stopPropagation()">
+            <img src="images/project layout.jpg" alt="The Iris County Master Layout Plan Large" class="map-modal-img" id="map-modal-img">
+        </div>
+    </div>
 
     <!-- Promo Popup & Animations Module -->
     <div id="promo-popup" class="popup-overlay" style="display: none !important;">
@@ -1643,7 +1705,7 @@
 
             <!-- Action Buttons Section -->
             <div class="popup-actions">
-                <a href="tel:+918080808080" class="popup-btn btn-call" id="popup-btn-call">
+                <a href="tel:+919000259211" class="popup-btn btn-call" id="popup-btn-call">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                     </svg>
@@ -2928,19 +2990,6 @@
 
     <!-- Enquiry Form Interaction Handlers -->
     <script>
-        function selectPlotPill(pill, value) {
-            // Remove selected class from all sibling pills
-            const container = pill.closest('.plot-pills-container');
-            const pills = container.querySelectorAll('.plot-pill');
-            pills.forEach(p => p.classList.remove('selected'));
-            
-            // Add selected class to the clicked pill
-            pill.classList.add('selected');
-            
-            // Set hidden input value
-            document.getElementById('enquiry-plot-size').value = value;
-        }
-
         function handleEnquirySubmit(event) {
             event.preventDefault();
             
@@ -2954,7 +3003,6 @@
             
             const name = document.getElementById('enquiry-name').value;
             const phone = document.getElementById('enquiry-phone').value;
-            const plotSize = document.getElementById('enquiry-plot-size').value;
             
             // Simulate API request delay
             setTimeout(() => {
@@ -2968,13 +3016,49 @@
                         </div>
                         <h3 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 12px; font-family: var(--font-body);">Callback Requested!</h3>
                         <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 0;">
-                            Thank you, <strong>${name}</strong>. We have recorded your interest in a <strong>${plotSize}</strong> plot.<br><br>
-                            An Iris County project advisor will contact you at <strong>${phone}</strong> within 15 minutes.
+                            Thank you, <strong>${name}</strong>. We have received your enquiry.<br><br>
+                            An Iris County project advisor will contact you at <strong>${phone}</strong> shortly.
                         </p>
                     </div>
                 `;
             }, 1000);
         }
+
+        // Map Lightbox Modal Logic
+        function openMapModal() {
+            const modal = document.getElementById('map-modal');
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMapModal(event) {
+            if (event) event.stopPropagation();
+            const modal = document.getElementById('map-modal');
+            const img = document.getElementById('map-modal-img');
+            if (img) img.classList.remove('zoomed');
+            modal.classList.remove('active');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        document.getElementById('map-modal-img').addEventListener('click', function(e) {
+            e.stopPropagation();
+            this.classList.toggle('zoomed');
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('map-modal');
+                if (modal && modal.classList.contains('active')) {
+                    closeMapModal();
+                }
+            }
+        });
     </script>
 
 </body>
