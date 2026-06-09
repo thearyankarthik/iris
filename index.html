@@ -835,6 +835,435 @@
                 height: 300px !important;
             }
         }
+
+        /* Master Plan Map & Invest Grid styling */
+        .invest-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 40px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .invest-map-container {
+            width: 100%;
+        }
+
+        .map-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+            transition: var(--transition);
+        }
+
+        .map-card:hover {
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .map-header {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 12px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+        }
+
+        .map-badge {
+            color: var(--secondary-color);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .map-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            background: #0d0a0d;
+            aspect-ratio: 4 / 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-in;
+        }
+
+        .map-plan-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        .map-image-wrapper:hover .map-plan-img {
+            transform: scale(1.4);
+        }
+
+        .map-overlay-hint {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 12, 14, 0.85);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 8px 18px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 600;
+            pointer-events: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+            backdrop-filter: blur(5px);
+            z-index: 5;
+        }
+
+        .map-image-wrapper:hover .map-overlay-hint {
+            opacity: 0;
+            transform: translate(-50%, 10px);
+        }
+
+        .invest-reasons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .reason-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 22px;
+            border-radius: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: var(--transition);
+        }
+
+        .reason-card:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+
+        .reason-icon-box {
+            width: 48px;
+            height: 48px;
+            background: rgba(108, 43, 94, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            border: 1px solid rgba(108, 43, 94, 0.2);
+            transition: var(--transition);
+        }
+
+        .reason-card:hover .reason-icon-box {
+            background: var(--primary-color);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(108, 43, 94, 0.3);
+        }
+
+        .reason-text h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .reason-text p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0;
+        }
+
+        /* Enquiry Section styling */
+        .enquiry-section {
+            padding: 100px 0;
+            background-color: var(--bg-color);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .enquiry-container {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .enquiry-info {
+            color: #ffffff;
+        }
+
+        .enquiry-badge {
+            background: rgba(200, 152, 54, 0.1);
+            color: var(--secondary-color);
+            border: 1px solid var(--secondary-color);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .enquiry-info h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-family: var(--font-body);
+        }
+
+        .enquiry-info h2 span {
+            color: var(--secondary-color);
+        }
+
+        .enquiry-info p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        .enquiry-contact-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .contact-card-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .contact-card-item:hover {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+
+        .contact-card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(200, 152, 54, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary-color);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .contact-card-details h4 {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .contact-card-details p {
+            font-size: 1.15rem;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+
+        /* Glassmorphic Form Card */
+        .enquiry-form-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            position: relative;
+        }
+
+        .enquiry-form-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            z-index: -1;
+            border-radius: 26px;
+            opacity: 0.15;
+            transition: var(--transition);
+        }
+
+        .enquiry-form-card:hover::before {
+            opacity: 0.3;
+        }
+
+        .enquiry-form-group {
+            margin-bottom: 24px;
+            position: relative;
+        }
+
+        .enquiry-form-group i {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            transition: var(--transition);
+            z-index: 2;
+        }
+
+        .enquiry-form-group textarea + i {
+            top: 22px;
+            transform: none;
+        }
+
+        .enquiry-form-input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #ffffff;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+            box-sizing: border-box;
+        }
+
+        .enquiry-form-input:focus {
+            background: rgba(255, 255, 255, 0.04);
+            border-color: var(--secondary-color);
+            box-shadow: 0 0 15px rgba(200, 152, 54, 0.15);
+        }
+
+        .enquiry-form-input:focus + i {
+            color: var(--secondary-color);
+        }
+
+        .plot-pills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .plot-pill {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 12px 6px;
+            text-align: center;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: var(--transition);
+            user-select: none;
+        }
+
+        .plot-pill:hover {
+            border-color: var(--secondary-color);
+            color: #ffffff;
+        }
+
+        .plot-pill.selected {
+            background: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: var(--primary-color);
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(200, 152, 54, 0.3);
+        }
+
+        .enquiry-submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--secondary-color), #b28328);
+            color: var(--primary-color);
+            border: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            outline: none;
+            box-shadow: 0 8px 20px rgba(200, 152, 54, 0.2);
+        }
+
+        .enquiry-submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(200, 152, 54, 0.35);
+            background: linear-gradient(135deg, #dfab41, var(--secondary-color));
+        }
+
+        .enquiry-success-message {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .success-checkmark {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(46, 204, 113, 0.1);
+            border: 2px solid #2ecc71;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2ecc71;
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            animation: scaleIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+
+        @media (max-width: 992px) {
+            .invest-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            .enquiry-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .enquiry-info h2 {
+                font-size: 2.2rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -854,7 +1283,7 @@
                 <a href="#amenities">Amenities</a>
                 <a href="#location">Location</a>
                 <a href="#gallery">Gallery</a>
-                <a href="#contact" class="btn-primary">Enquire Now</a>
+                <a href="#enquiry" class="btn-primary">Enquire Now</a>
             </div>
         </div>
     </nav>
@@ -917,27 +1346,64 @@
     <!-- Amenities Section -->
     <section class="overview alt-bg" id="amenities">
         <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">Why Invest in <span>The Iris County?</span></h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-                <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
-                    <i class="fas fa-compass" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 15px;">Flawless Vastu Integration</h4>
-                    <p style="color: var(--text-muted);">Experience perfect harmony and positive energy in a masterfully planned environment, complete with a grand, secure entrance.</p>
+            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">Why Invest in <span>The Iris County?</span></h2>
+            <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 50px auto; font-size: 1.1rem;">A meticulously planned gated community layout featuring premium amenities and APCRDA approval, designed for a prosperous future.</p>
+            
+            <div class="invest-grid">
+                <!-- Left: Master Plan Map (fits perfectly and zooms on hover) -->
+                <div class="invest-map-container slide-right">
+                    <div class="map-card">
+                        <div class="map-header">
+                            <span class="map-badge">APCRDA Approved LPNO: 1168/0128/LP/PMDIMKLA/2024</span>
+                        </div>
+                        <div class="map-image-wrapper">
+                            <img src="images/project layout.jpg" alt="The Iris County Master Layout Plan" class="map-plan-img">
+                            <div class="map-overlay-hint">
+                                <i class="fas fa-search-plus"></i>
+                                <span>Hover to Zoom Plan</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
-                    <i class="fas fa-water" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 15px;">State-of-the-Art Utilities</h4>
-                    <p style="color: var(--text-muted);">Enjoy uninterrupted living with premium HDPE water lines, eco-friendly harvesting chambers, and a completely concealed underground drainage network.</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
-                    <i class="fas fa-road" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 15px;">World-Class Infrastructure</h4>
-                    <p style="color: var(--text-muted);">Navigate through expansive 40-foot wide, premium black-topped roads illuminated by modern street lighting, built for ultimate safety and luxury.</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
-                    <i class="fas fa-leaf" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
-                    <h4 style="font-size: 1.2rem; margin-bottom: 15px;">Lush Green Sanctuaries</h4>
-                    <p style="color: var(--text-muted);">Breathe in the serenity of our beautifully curated parks, featuring stunning avenue plantations, vibrant play zones, and tranquil relaxation spaces.</p>
+
+                <!-- Right: Core Reasons Grid -->
+                <div class="invest-reasons slide-left">
+                    <div class="reason-card">
+                        <div class="reason-icon-box">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <div class="reason-text">
+                            <h4>Flawless Vastu Integration</h4>
+                            <p>Experience perfect harmony and positive energy in a masterfully planned environment, complete with a grand, secure entrance.</p>
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon-box">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <div class="reason-text">
+                            <h4>State-of-the-Art Utilities</h4>
+                            <p>Enjoy uninterrupted living with premium HDPE water lines, eco-friendly harvesting chambers, and a completely concealed underground drainage network.</p>
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon-box">
+                            <i class="fas fa-road"></i>
+                        </div>
+                        <div class="reason-text">
+                            <h4>World-Class Infrastructure</h4>
+                            <p>Navigate through expansive 40-foot wide, premium black-topped roads illuminated by modern street lighting, built for ultimate safety and luxury.</p>
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <div class="reason-icon-box">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <div class="reason-text">
+                            <h4>Lush Green Sanctuaries</h4>
+                            <p>Breathe in the serenity of our beautifully curated parks, featuring stunning avenue plantations, vibrant play zones, and tranquil relaxation spaces.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1061,6 +1527,77 @@
                 <!-- Container Office 2 (wide): Span 3 cols -->
                 <div class="gallery-item span-3-col" data-category="development">
                     <img src="images/iris-county5.jpeg" alt="Site Office" class="gallery-item-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiry Form Section -->
+    <section class="enquiry-section" id="enquiry">
+        <div class="container">
+            <div class="enquiry-container">
+                <!-- Left: Info & Contacts -->
+                <div class="enquiry-info slide-right">
+                    <span class="enquiry-badge">Contact Advisory</span>
+                    <h2>Secure Your Plot At <span>The Iris County</span></h2>
+                    <p>Ready to invest in Vijayawada's premium gated community? Fill out the form to request a callback, check pricing sheets, or schedule an onsite visit with our dedicated real estate advisors.</p>
+                    
+                    <div class="enquiry-contact-cards">
+                        <a href="tel:+918080808080" class="contact-card-item">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-card-details">
+                                <h4>Call Sales Office</h4>
+                                <p>+91 80808 08080</p>
+                            </div>
+                        </a>
+                        <div class="contact-card-item">
+                            <div class="contact-card-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-card-details">
+                                <h4>Response Window</h4>
+                                <p>Guaranteed within 15 Minutes</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Glassmorphic Form Card -->
+                <div class="enquiry-form-card slide-left">
+                    <form id="contact-enquiry-form" onsubmit="handleEnquirySubmit(event)">
+                        <div class="enquiry-form-group">
+                            <input type="text" id="enquiry-name" class="enquiry-form-input" placeholder="Your Full Name" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="enquiry-form-group">
+                            <input type="tel" id="enquiry-phone" class="enquiry-form-input" placeholder="Phone Number" required>
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="enquiry-form-group">
+                            <input type="email" id="enquiry-email" class="enquiry-form-input" placeholder="Email Address (Optional)">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="enquiry-form-group">
+                            <label style="display: block; color: var(--text-muted); font-size: 0.9rem; font-weight: 600; margin-bottom: 8px; font-family: var(--font-body);">Preferred Plot Size</label>
+                            <div class="plot-pills-container">
+                                <div class="plot-pill selected" onclick="selectPlotPill(this, '165 Sq.Yds')">165 Yds</div>
+                                <div class="plot-pill" onclick="selectPlotPill(this, '172 Sq.Yds')">172 Yds</div>
+                                <div class="plot-pill" onclick="selectPlotPill(this, '175 Sq.Yds')">175 Yds</div>
+                                <div class="plot-pill" onclick="selectPlotPill(this, 'Other')">Other</div>
+                            </div>
+                            <input type="hidden" id="enquiry-plot-size" value="165 Sq.Yds">
+                        </div>
+                        <div class="enquiry-form-group">
+                            <textarea id="enquiry-message" class="enquiry-form-input" placeholder="Message / Specific Queries (Optional)" style="height: 100px; resize: none; padding-top: 16px;"></textarea>
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <button type="submit" class="enquiry-submit-btn">
+                            <span>Request Callback</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -2387,6 +2924,57 @@
                 }
             }
         })();
+    </script>
+
+    <!-- Enquiry Form Interaction Handlers -->
+    <script>
+        function selectPlotPill(pill, value) {
+            // Remove selected class from all sibling pills
+            const container = pill.closest('.plot-pills-container');
+            const pills = container.querySelectorAll('.plot-pill');
+            pills.forEach(p => p.classList.remove('selected'));
+            
+            // Add selected class to the clicked pill
+            pill.classList.add('selected');
+            
+            // Set hidden input value
+            document.getElementById('enquiry-plot-size').value = value;
+        }
+
+        function handleEnquirySubmit(event) {
+            event.preventDefault();
+            
+            const form = document.getElementById('contact-enquiry-form');
+            const submitBtn = form.querySelector('.enquiry-submit-btn');
+            const submitBtnSpan = submitBtn.querySelector('span');
+            
+            // Disable button and show loading state
+            submitBtn.disabled = true;
+            submitBtnSpan.textContent = "Submitting...";
+            
+            const name = document.getElementById('enquiry-name').value;
+            const phone = document.getElementById('enquiry-phone').value;
+            const plotSize = document.getElementById('enquiry-plot-size').value;
+            
+            // Simulate API request delay
+            setTimeout(() => {
+                const card = form.closest('.enquiry-form-card');
+                
+                // Show success view
+                card.innerHTML = `
+                    <div class="enquiry-success-message">
+                        <div class="success-checkmark">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3 style="font-size: 1.5rem; color: #ffffff; margin-bottom: 12px; font-family: var(--font-body);">Callback Requested!</h3>
+                        <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 0;">
+                            Thank you, <strong>${name}</strong>. We have recorded your interest in a <strong>${plotSize}</strong> plot.<br><br>
+                            An Iris County project advisor will contact you at <strong>${phone}</strong> within 15 minutes.
+                        </p>
+                    </div>
+                `;
+            }, 1000);
+        }
     </script>
 
 </body>
