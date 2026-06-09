@@ -1,0 +1,11 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary files
+imagenet_classes.txt
+
+# OS metadata
+.DS_Store
+Thumbs.db

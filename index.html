@@ -1,0 +1,2461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Iris County | Premium Gated Community Plots in Vuyyuru</title>
+    <meta name="description" content="Open Plots for Sale in Vijayawada | Iris County at Vuyyuru, NH65. Clear-title plots near NH65 in a fast-growing location.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Embedded CSS -->
+    <style>
+        /* 
+          The Iris County - Signature Theme (Deep Purple, Gold, & Teal)
+          Pure CSS, No JS
+        */
+
+        :root {
+            --primary-color: #6c2b5e; /* Deep Purple from IRIS */
+            --secondary-color: #c89836; /* Gold from COUNTY */
+            --accent-green: #007672; /* Teal Green from TAG */
+            --primary-dark: #4f1e44;
+            --bg-main: #ffffff; /* Pure White */
+            --bg-alt: #fdfaf2; /* Soft Cream */
+            --bg-card: #ffffff;
+            --text-main: #2b2628; /* Deep Charcoal */
+            --text-muted: #6b6366; /* Muted Taupe */
+            --border-color: #ede8dc;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Outfit', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-main);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .section-title span {
+            color: var(--secondary-color);
+            font-style: italic;
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--primary-color);
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 30px;
+            border: 2px solid var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(200, 152, 54, 0.3);
+        }
+
+        /* Navbar - Always solid since JS is removed */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            z-index: 1000;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 5px 20px rgba(108, 43, 94, 0.05);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        /* Pure CSS Mobile Menu Checkbox Hack */
+        .menu-toggle {
+            display: none;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a:not(.btn-primary) {
+            font-size: 1rem;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .nav-links a:not(.btn-primary)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-green);
+            transition: var(--transition);
+        }
+
+        .nav-links a:not(.btn-primary):hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:not(.btn-primary):hover {
+            color: var(--accent-green);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            width: 100%;
+            padding-top: 80px; /* Offset for fixed navbar */
+            background: linear-gradient(135deg, #fdfaf2 0%, #ffffff 100%);
+        }
+
+        .hero picture {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .hero picture img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(200, 152, 54, 0.1) 0%, rgba(255,255,255,0) 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h4 {
+            color: var(--accent-green);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            font-family: var(--font-body);
+        }
+
+        .hero h1 {
+            font-size: 5rem;
+            line-height: 1.1;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+        }
+
+        .hero h1 span {
+            font-style: italic;
+            font-weight: 400;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Glass Card */
+        .hero-glass-card {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(200, 152, 54, 0.2);
+            border-radius: 20px;
+            padding: 30px 50px;
+            display: flex;
+            gap: 60px;
+            z-index: 2;
+            box-shadow: 0 20px 40px rgba(108, 43, 94, 0.08);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h3 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .stat p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        /* Overview Section */
+        .overview {
+            padding: 120px 0;
+            position: relative;
+            background-color: var(--bg-main);
+        }
+
+        .overview.alt-bg {
+            background-color: var(--bg-alt);
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .overview-text p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: var(--text-main);
+        }
+
+        .feature-list li i {
+            color: var(--accent-green);
+            font-size: 1.2rem;
+        }
+
+        .image-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(108, 43, 94, 0.1);
+            aspect-ratio: 4/5;
+        }
+
+        .gradient-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #f7f3e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .gradient-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(45deg, rgba(200, 152, 54, 0.2), rgba(255,255,255,0));
+        }
+
+        /* Amenities Cards */
+        #amenities > .container > div > div {
+            background: var(--bg-card) !important;
+            border: 1px solid var(--border-color) !important;
+            box-shadow: 0 10px 30px rgba(108, 43, 94, 0.04);
+            transition: var(--transition);
+        }
+
+        #amenities > .container > div > div:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(200, 152, 54, 0.15);
+            border-color: var(--secondary-color) !important;
+        }
+
+        #amenities h4 {
+            color: var(--primary-color);
+        }
+
+        /* Highlight boxes */
+        .overview-text > div {
+            background: var(--bg-card) !important;
+            border-left-color: var(--accent-green) !important;
+            box-shadow: 0 5px 15px rgba(108, 43, 94, 0.04);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-brand h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .footer-brand span {
+            color: var(--secondary-color);
+        }
+
+        .footer-brand p {
+            color: #e5ddeb;
+            max-width: 300px;
+        }
+
+        .footer h4 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--secondary-color);
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: #e5ddeb;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-contact p {
+            color: #e5ddeb;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-contact i {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #e5ddeb;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        .fade-up {
+            animation: fadeUpAnim 1s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+        }
+
+        .fade-in {
+            animation: fadeInAnim 1s ease forwards;
+        }
+
+        .slide-right {
+            animation: slideRightAnim 1s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+        }
+
+        .slide-left {
+            animation: slideLeftAnim 1s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+
+        @keyframes fadeUpAnim {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInAnim {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideRightAnim {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideLeftAnim {
+            0% { opacity: 0; transform: translateX(50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        .location-grid {
+            grid-template-columns: 1.25fr 0.75fr !important;
+        }
+
+        /* Location Section Styles */
+        .infographic-wrapper {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 15px 35px rgba(108, 43, 94, 0.05);
+            transition: var(--transition);
+            background: #ffffff;
+            margin-bottom: 35px;
+        }
+
+        .infographic-wrapper:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(200, 152, 54, 0.12);
+            border-color: var(--secondary-color);
+        }
+
+        .infographic-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--primary-color);
+            color: #ffffff;
+            padding: 6px 12px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 20px;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            z-index: 10;
+        }
+
+        .connectivity-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .infographic-wrapper:hover .connectivity-img {
+            transform: scale(1.02);
+        }
+
+        .location-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .map-container {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(108, 43, 94, 0.05);
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .map-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(200, 152, 54, 0.12);
+            border-color: var(--secondary-color);
+        }
+
+        .map-container iframe {
+            display: block;
+            width: 100%;
+            height: 500px;
+            border: none;
+        }
+
+        /* Timeline Styles */
+        .connectivity-timeline {
+            position: relative;
+            padding-left: 35px;
+            margin-top: 15px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 12px;
+            top: 15px;
+            bottom: 15px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-green) 100%);
+            opacity: 0.4;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            transition: var(--transition);
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-badge {
+            position: absolute;
+            left: -33px;
+            top: 4px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 2px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        .timeline-badge i {
+            font-size: 0.7rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .timeline-time {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-content {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px 20px;
+            box-shadow: 0 4px 10px rgba(108, 43, 94, 0.02);
+            transition: var(--transition);
+        }
+
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            font-family: var(--font-body);
+            font-weight: 700;
+        }
+
+        .timeline-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Hover animations */
+        .timeline-item:hover .timeline-content {
+            transform: translateX(6px);
+            border-color: var(--secondary-color);
+            box-shadow: 0 10px 20px rgba(200, 152, 54, 0.08);
+        }
+
+        .timeline-item:hover .timeline-badge {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            transform: scale(1.15);
+        }
+
+        .timeline-item:hover .timeline-badge i {
+            color: #ffffff;
+        }
+
+        /* Sticky map on desktop */
+        @media (min-width: 993px) {
+            .location-right {
+                position: sticky;
+                top: 110px;
+                align-self: start;
+            }
+        }
+
+        .detail-card i {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-top: 3px;
+            background: rgba(108, 43, 94, 0.06);
+            padding: 12px;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .detail-card:hover i {
+            color: #ffffff;
+            background: var(--primary-color);
+        }
+
+        .detail-card h5 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+            font-family: var(--font-body);
+            font-weight: 700;
+        }
+
+        .detail-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 992px) {
+            .hero h1 { font-size: 3.5rem; }
+            .hero-glass-card { width: 90%; padding: 20px; gap: 30px; justify-content: center; }
+            .overview-grid { grid-template-columns: 1fr; gap: 40px; }
+            .location-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+            .image-wrapper { aspect-ratio: 16/9; }
+            .map-container iframe { height: 380px; }
+            .footer-content { grid-template-columns: 1fr; text-align: center; }
+            .footer-links { align-items: center; }
+            .footer-contact p { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { padding: 0 20px; }
+            .mobile-menu-btn { display: block; }
+            
+            /* Pure CSS Menu logic using checkbox hack */
+            .nav-links { 
+                display: none; 
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.99);
+                padding: 25px 0;
+                box-shadow: 0 10px 20px rgba(108, 43, 94, 0.05);
+                border-bottom: 1px solid var(--border-color);
+                gap: 20px;
+            }
+            .menu-toggle:checked ~ .nav-links {
+                display: flex;
+            }
+
+            .hero h1 { font-size: 2.5rem; }
+            .hero-glass-card { display: none; }
+            .section-title { font-size: 2.2rem; margin-bottom: 1.2rem; }
+            .overview { padding: 80px 0; }
+        }
+
+        @media (max-width: 576px) {
+            .section-title { font-size: 1.8rem; }
+            .map-container iframe { height: 320px; }
+            .connectivity-timeline { padding-left: 25px; }
+            .timeline-line { left: 8px; }
+            .timeline-badge { left: -28px; }
+            .timeline-content { padding: 12px 15px; }
+        }
+
+        /* Creative Gallery Section Styles */
+        .gallery-section {
+            padding: 100px 0;
+            background-color: var(--bg-alt);
+        }
+
+        .gallery-filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 10px 24px;
+            border-radius: 30px;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+            outline: none;
+        }
+
+        .filter-tab:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-1px);
+        }
+
+        .filter-tab.active {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(108, 43, 94, 0.25);
+        }
+
+        /* Bento Grid Layout */
+        .gallery-bento-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 24px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 380px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            display: block;
+            transition: var(--transition);
+        }
+
+        .gallery-item.hide {
+            display: none;
+        }
+
+        /* Bento spans */
+        .gallery-item.span-2-col {
+            grid-column: span 2;
+        }
+
+        .gallery-item.span-3-col {
+            grid-column: span 3;
+            height: 320px;
+        }
+
+        .gallery-item-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Responsive grid adjustments */
+        @media (max-width: 992px) {
+            .gallery-bento-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item.span-2-col {
+                grid-column: span 2;
+            }
+            
+            .gallery-item.span-3-col {
+                grid-column: span 2;
+                height: 380px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-section {
+                padding: 60px 0;
+            }
+            
+            .gallery-bento-grid {
+                grid-template-columns: 1fr;
+                grid-gap: 20px;
+            }
+            
+            .gallery-item {
+                grid-column: span 1 !important;
+                height: 300px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" style="display: flex; align-items: center;"><img src="images/logo.png" alt="TAG Projects" style="height: 45px; width: auto;"></a>
+            
+            <!-- Pure CSS Mobile Menu Toggle -->
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+
+            <div class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#amenities">Amenities</a>
+                <a href="#location">Location</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#contact" class="btn-primary">Enquire Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <picture>
+            <source media="(max-width: 768px)" srcset="images/banner-desktop.png">
+            <img src="images/banner-mobile.png" alt="The Iris County">
+        </picture>
+        <div class="hero-content">
+            <!-- Text removed because it is baked into the banner image -->
+        </div>
+        <div class="hero-glass-card fade-in delay-4">
+            <div class="stat">
+                <h3>₹11,999</h3>
+                <p>Per Sq.Yd</p>
+            </div>
+            <div class="stat">
+                <h3>165+</h3>
+                <p>Sq.Yds Plots</p>
+            </div>
+            <div class="stat">
+                <h3>RERA</h3>
+                <p>Approved</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section class="overview" id="overview">
+        <div class="container">
+            <div class="overview-grid">
+                <div class="overview-text slide-right">
+                    <h2 class="section-title">Discover Your Future at <span>The Iris County</span></h2>
+                    <p>Looking for open plots for sale in Vijayawada? The Iris County at Vuyyuru offers clear-title premium plots near NH65 in a fast-growing location. Choose the ideal space for your dream home with various plot sizes starting from 165 Sq.Yds.</p>
+                    
+                    <div style="margin: 20px 0; padding: 20px; background: rgba(255,255,255,0.05); border-left: 4px solid var(--accent-green); border-radius: 8px;">
+                        <p style="margin-bottom: 5px;"><strong>RERA Number:</strong> P06290016644</p>
+                        <p style="margin-bottom: 0;"><strong>LP.NO:</strong> 152/2025/1168/PMDIMKLA/DPMS</p>
+                    </div>
+
+                    <ul class="feature-list" style="margin-top: 30px;">
+                        <li><i class="fas fa-check-circle"></i> <b>Prime Location:</b> Close to Vijayawada</li>
+                        <li><i class="fas fa-check-circle"></i> <b>Security:</b> Gated community lifestyle</li>
+                        <li><i class="fas fa-check-circle"></i> <b>Flexible Options:</b> Various plot sizes</li>
+                    </ul>
+                </div>
+                <div class="overview-image slide-left">
+                    <div class="image-wrapper">
+                        <!-- We can use the actual image from the website or keep the placeholder -->
+                        <div class="gradient-placeholder" style="background-image: url('https://res.cloudinary.com/dijlcbuyn/image/upload/v1730521100/Iris_County_Image_e9axrt.png'); background-size: cover; background-position: center;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="overview alt-bg" id="amenities">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">Why Invest in <span>The Iris County?</span></h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
+                <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
+                    <i class="fas fa-compass" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 15px;">Flawless Vastu Integration</h4>
+                    <p style="color: var(--text-muted);">Experience perfect harmony and positive energy in a masterfully planned environment, complete with a grand, secure entrance.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
+                    <i class="fas fa-water" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 15px;">State-of-the-Art Utilities</h4>
+                    <p style="color: var(--text-muted);">Enjoy uninterrupted living with premium HDPE water lines, eco-friendly harvesting chambers, and a completely concealed underground drainage network.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
+                    <i class="fas fa-road" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 15px;">World-Class Infrastructure</h4>
+                    <p style="color: var(--text-muted);">Navigate through expansive 40-foot wide, premium black-topped roads illuminated by modern street lighting, built for ultimate safety and luxury.</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.02); padding: 30px; border-radius: 15px; border: 1px solid rgba(255,255,255,0.05);">
+                    <i class="fas fa-leaf" style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h4 style="font-size: 1.2rem; margin-bottom: 15px;">Lush Green Sanctuaries</h4>
+                    <p style="color: var(--text-muted);">Breathe in the serenity of our beautifully curated parks, featuring stunning avenue plantations, vibrant play zones, and tranquil relaxation spaces.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Connectivity Section -->
+    <section class="overview" id="location">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 60px;">Strategic Location & <span>Connectivity</span></h2>
+            <div class="overview-grid location-grid">
+                <!-- Left Column: Infographic & Timeline -->
+                <div class="location-left slide-right">
+                    <p class="location-desc">Situated in a rapidly developing corridor near NH65, <strong>The Iris County</strong> offers prime connectivity to key transit hubs, educational institutions, and employment centers.</p>
+                    
+                    <div class="infographic-wrapper">
+                        <span class="infographic-badge">CONNECTIVITY MAP</span>
+                        <img src="images/connectivity-map.jpg" alt="The Iris County Connectivity Map" class="connectivity-img">
+                    </div>
+
+                    <!-- Interactive Vertical Timeline -->
+                    <div class="connectivity-timeline">
+                        <div class="timeline-line"></div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-badge"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="timeline-content">
+                                <span class="timeline-time">3 km (3 Mins)</span>
+                                <h4>Vuyyuru Center</h4>
+                                <p>Immediate proximity to the local center, market area, and healthcare services.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-badge"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="timeline-content">
+                                <span class="timeline-time">10 Mins away</span>
+                                <h4>Premium Educational Zone</h4>
+                                <p>Quick access to Narayana, Sri Chaitanya, Viswa Santhii & Bhashyam Blooms Schools.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-badge"><i class="fas fa-industry"></i></div>
+                            <div class="timeline-content">
+                                <span class="timeline-time">20 Mins away</span>
+                                <h4>BEL & Industrial Facilities</h4>
+                                <p>Close to Bharat Electronics Ltd. and local Agro-Processing & Warehousing facilities.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-badge"><i class="fas fa-plane"></i></div>
+                            <div class="timeline-content">
+                                <span class="timeline-time">25 Mins away</span>
+                                <h4>Airport & Port Access</h4>
+                                <p>Convenient, fast travel routes to Vijayawada Gannavaram Airport and Machilipatnam Port.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-badge"><i class="fas fa-road"></i></div>
+                            <div class="timeline-content">
+                                <span class="timeline-time">30 Mins away</span>
+                                <h4>Vijayawada Benz Circle</h4>
+                                <p>Seamless highway connection to central Benz Circle and the proposed ORR Exit at Chalivendrapalem.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Map (Sticky) -->
+                <div class="location-right slide-left">
+                    <div class="map-container">
+                        <iframe 
+                            src="https://maps.google.com/maps?q=THE%20IRIS%20COUNTY:%20Premium%20Gated%20Community%20Plots,%20Vuyyuru&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">On-Site <span>Gallery</span></h2>
+            <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px auto; font-size: 1.1rem;">Explore real-time development progress, structural layouts, and natural landscapes directly from the site of The Iris County.</p>
+
+            <!-- Interactive Category Tabs -->
+            <div class="gallery-filter-tabs">
+                <button class="filter-tab active" data-filter="all">All Photos</button>
+                <button class="filter-tab" data-filter="development">Site Development</button>
+                <button class="filter-tab" data-filter="office">Office & Signage</button>
+                <button class="filter-tab" data-filter="landscape">Landscape</button>
+            </div>            <!-- Bento Grid -->
+            <div class="gallery-bento-grid">
+                <!-- Excavation: Span 2 cols -->
+                <div class="gallery-item span-2-col" data-category="development">
+                    <img src="images/iris-county1.jpg" alt="Excavation & Trenching" class="gallery-item-img">
+                </div>
+
+                <!-- Container Office 1: Span 1 col -->
+                <div class="gallery-item" data-category="office">
+                    <img src="images/iris-county3.jpg" alt="TAG Projects Cabin" class="gallery-item-img">
+                </div>
+
+                <!-- Billboard: Span 1 col -->
+                <div class="gallery-item" data-category="office">
+                    <img src="images/iris-county2.jpg" alt="TAG IRIS Advertisement Hoarding" class="gallery-item-img">
+                </div>
+
+                <!-- Leveling plots: Span 1 col -->
+                <div class="gallery-item" data-category="development">
+                    <img src="images/iris-county6.jpeg" alt="Plot Demarcation" class="gallery-item-img">
+                </div>
+
+                <!-- Palm road: Span 1 col -->
+                <div class="gallery-item" data-category="landscape">
+                    <img src="images/iris-county7.jpeg" alt="Scenic Palm Pathway" class="gallery-item-img">
+                </div>
+
+                <!-- Container Office 2 (wide): Span 3 cols -->
+                <div class="gallery-item span-3-col" data-category="development">
+                    <img src="images/iris-county5.jpeg" alt="Site Office" class="gallery-item-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 TAG Projects. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Promo Popup & Animations Module -->
+    <div id="promo-popup" class="popup-overlay" style="display: none !important;">
+        <!-- Background Animation Container -->
+        <div class="popup-animations-container">
+            <!-- Floating Balloons Container -->
+            <div class="balloon-container"></div>
+            
+            <!-- Flying Airplane Container (Slower & Larger) -->
+            <div class="flight-container">
+                <svg class="flight-svg" viewBox="0 0 24 24" width="240" height="240">
+                    <path fill="#c89836" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L14 19v-5.5L21 16z"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Centered Card Container (Bigger Popup Message) -->
+        <div class="popup-card">
+            <!-- Close Button (Cross Icon) -->
+            <button class="popup-close-btn" aria-label="Close Popup">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <!-- Promo Image -->
+            <!-- Update source path if hosted elsewhere -->
+            <img src="images/pop up.jpeg" alt="Special Promo Offer" class="popup-img">
+
+            <!-- Action Buttons Section -->
+            <div class="popup-actions">
+                <a href="tel:+918080808080" class="popup-btn btn-call" id="popup-btn-call">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    Call Us
+                </a>
+                <a href="#contact" class="popup-btn btn-enquire" id="popup-btn-enquire">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="btn-icon">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    Enquire Now
+                </a>
+            </div>
+        </div>
+
+        <!-- Ground-Based Flowerpot Firecrackers -->
+        <div class="flowerpot left-pot outer-pot"><div class="pot-cone"></div></div>
+        <div class="flowerpot left-pot inner-pot"><div class="pot-cone"></div></div>
+        <div class="flowerpot right-pot inner-pot"><div class="pot-cone"></div></div>
+        <div class="flowerpot right-pot outer-pot"><div class="pot-cone"></div></div>
+
+        <!-- Celebration People Footer (Bottom of Screen - Front & Background Rows with NRI/Villa messages) -->
+        <div class="celebration-footer">
+            <!-- Back Row (Background People) -->
+            <div class="char-row back-row">
+                <!-- Bg Char 1: Popper (Left) -->
+                <div class="celebration-char popper" style="animation-delay: 0.15s;">
+                    <div class="char-avatar">
+                        <div class="char-hair style-3"></div>
+                        <div class="char-head skin-2">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-3"></div>
+                        <div class="char-arm waving skin-2" style="animation-delay: 0.3s;"></div>
+                        <div class="char-arm popper-arm skin-2">
+                            <div class="popper-tube"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bg Char 2: Waving Character (Left-Center) -->
+                <div class="celebration-char waving-char" style="animation-delay: 0.35s;">
+                    <div class="char-avatar">
+                        <div class="char-hair style-1"></div>
+                        <div class="char-head skin-1">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-1"></div>
+                        <div class="char-arm waving skin-1" style="animation-delay: 0.1s;"></div>
+                        <div class="char-arm left-arm skin-1"></div>
+                    </div>
+                </div>
+
+                <!-- Bg Char 3: Popper (Center-Left) -->
+                <div class="celebration-char popper" style="animation-delay: 0.25s;">
+                    <div class="char-avatar">
+                        <div class="char-hair style-2"></div>
+                        <div class="char-head skin-3">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-4"></div>
+                        <div class="char-arm waving skin-3" style="animation-delay: 0.4s;"></div>
+                        <div class="char-arm popper-arm skin-3">
+                            <div class="popper-tube"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bg Char 4: Waving Character (Center) -->
+                <div class="celebration-char waving-char" style="animation-delay: 0.45s;">
+                    <div class="char-avatar">
+                        <div class="char-hair style-1"></div>
+                        <div class="char-head skin-2">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-2"></div>
+                        <div class="char-arm waving skin-2" style="animation-delay: 0.2s;"></div>
+                        <div class="char-arm left-arm skin-2"></div>
+                    </div>
+                </div>
+
+                <!-- Bg Char 5: Popper (Center-Right) -->
+                <div class="celebration-char popper" style="animation-delay: 0.2s;">
+                    <div class="char-avatar">
+                        <div class="char-hair style-3"></div>
+                        <div class="char-head skin-1">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-3"></div>
+                        <div class="char-arm waving skin-1" style="animation-delay: 0.6s;"></div>
+                        <div class="char-arm popper-arm skin-1">
+                            <div class="popper-tube"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bg Char 6: Waving Character (Right-Center) -->
+                <div class="celebration-char waving-char" style="animation-delay: 0.5s;">
+                    <div class="char-avatar">
+                        <div class="char-hair style-2"></div>
+                        <div class="char-head skin-3">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-1"></div>
+                        <div class="char-arm waving skin-3" style="animation-delay: 0s;"></div>
+                        <div class="char-arm left-arm skin-3"></div>
+                    </div>
+                </div>
+
+                <!-- Bg Char 7: Popper (Right) -->
+                <div class="celebration-char popper" style="animation-delay: 0.3s;">
+                    <div class="char-avatar">
+                        <div class="char-hair style-1"></div>
+                        <div class="char-head skin-2">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-4"></div>
+                        <div class="char-arm waving skin-2" style="animation-delay: 0.5s;"></div>
+                        <div class="char-arm popper-arm skin-2">
+                            <div class="popper-tube"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Front Row (Foreground People) -->
+            <div class="char-row front-row">
+                <!-- Char 1: Popper 1 (Left) -->
+                <div class="celebration-char popper" style="animation-delay: 0.1s;">
+                    <div class="speech-bubble">Namaste USA! 🙏</div>
+                    <div class="char-avatar">
+                        <div class="char-hair style-1"></div>
+                        <div class="char-head skin-1">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-1"></div>
+                        <div class="char-arm waving skin-1" style="animation-delay: 0.2s;"></div>
+                        <div class="char-arm popper-arm skin-1">
+                            <div class="popper-tube"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Char 2: Waving Character 1 (Left-Center) -->
+                <div class="celebration-char waving-char" style="animation-delay: 0.4s;">
+                    <div class="speech-bubble">Own a piece of India! 🌟</div>
+                    <div class="char-avatar">
+                        <div class="char-hair style-2"></div>
+                        <div class="char-head skin-2">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-2"></div>
+                        <div class="char-arm waving skin-2" style="animation-delay: 0s;"></div>
+                        <div class="char-arm left-arm skin-2"></div>
+                    </div>
+                </div>
+
+                <!-- Char 3: Popper 2 (Center-Left) -->
+                <div class="celebration-char popper" style="animation-delay: 0.2s;">
+                    <div class="speech-bubble">Coming to the US! ✈️</div>
+                    <div class="char-avatar">
+                        <div class="char-hair style-3"></div>
+                        <div class="char-head skin-3">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-3"></div>
+                        <div class="char-arm waving skin-3" style="animation-delay: 0.5s;"></div>
+                        <div class="char-arm popper-arm skin-3">
+                            <div class="popper-tube"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Char 4: Waving Character 2 (Center-Right) -->
+                <div class="celebration-char waving-char" style="animation-delay: 0.55s;">
+                    <div class="speech-bubble">Your Dream Villa! 🏡</div>
+                    <div class="char-avatar">
+                        <div class="char-hair style-1"></div>
+                        <div class="char-head skin-1">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-4"></div>
+                        <div class="char-arm waving skin-1" style="animation-delay: 0.3s;"></div>
+                        <div class="char-arm left-arm skin-1"></div>
+                    </div>
+                </div>
+
+                <!-- Char 5: Popper 3 (Right-Center) -->
+                <div class="celebration-char popper" style="animation-delay: 0.15s;">
+                    <div class="speech-bubble">Invest back home! 📈</div>
+                    <div class="char-avatar">
+                        <div class="char-hair style-2"></div>
+                        <div class="char-head skin-2">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-1"></div>
+                        <div class="char-arm waving skin-2" style="animation-delay: 0.7s;"></div>
+                        <div class="char-arm popper-arm skin-2">
+                            <div class="popper-tube"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Char 6: Waving Character 3 (Right) -->
+                <div class="celebration-char waving-char" style="animation-delay: 0.5s;">
+                    <div class="speech-bubble">Secure your roots! 🌱</div>
+                    <div class="char-avatar">
+                        <div class="char-hair style-3"></div>
+                        <div class="char-head skin-3">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-2"></div>
+                        <div class="char-arm waving skin-3" style="animation-delay: 0.1s;"></div>
+                        <div class="char-arm left-arm skin-3"></div>
+                    </div>
+                </div>
+
+                <!-- Char 7: Popper 4 (Far-Right-Center) -->
+                <div class="celebration-char popper" style="animation-delay: 0.3s;">
+                    <div class="speech-bubble">Meet us in the US! 🤝</div>
+                    <div class="char-avatar">
+                        <div class="char-hair style-1"></div>
+                        <div class="char-head skin-1">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-3"></div>
+                        <div class="char-arm waving skin-1" style="animation-delay: 0.4s;"></div>
+                        <div class="char-arm popper-arm skin-1">
+                            <div class="popper-tube"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bg Char 8: Waving Character (Right) -->
+                <div class="celebration-char waving-char" style="animation-delay: 0.45s;">
+                    <div class="speech-bubble">Welcome Home! ✨</div>
+                    <div class="char-avatar">
+                        <div class="char-hair style-2"></div>
+                        <div class="char-head skin-2">
+                            <div class="char-eye left"></div>
+                            <div class="char-eye right"></div>
+                            <div class="char-smile"></div>
+                        </div>
+                        <div class="char-body shirt-4"></div>
+                        <div class="char-arm waving skin-2" style="animation-delay: 0.2s;"></div>
+                        <div class="char-arm left-arm skin-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Styling Block -->
+    <style>
+        /* Popup Overlay Backdrop */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            height: 100dvh;
+            background: rgba(108, 43, 94, 0.45); /* Tinted with deep purple theme */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            z-index: 9990;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+            overflow: hidden; /* Prevent scrolling inside the overlay */
+        }
+
+        body.popup-open {
+            overflow: hidden;
+        }
+
+        .popup-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        /* Popup Content Card (Bigger popup message) */
+        .popup-card {
+            position: relative;
+            max-width: 750px;
+            width: 90%;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            border: 2px solid #c89836; /* Theme gold border */
+            transform: scale(0.8);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 9999;
+            margin-bottom: 80px; /* Leave space for characters at the bottom */
+        }
+
+        .popup-overlay.active .popup-card {
+            transform: scale(1);
+        }
+
+        /* Promo Image inside Card */
+        .popup-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 18px 18px 0 0; /* Rounded top corners only to flow into action block */
+        }
+
+        /* Popup Action Buttons Block */
+        .popup-actions {
+            display: flex;
+            gap: 15px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 0 0 18px 18px; /* Match card bottom corners */
+            border-top: 1px solid #ede8dc;
+            box-sizing: border-box;
+        }
+
+        .popup-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 20px;
+            font-family: 'Outfit', 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            outline: none;
+            border: none;
+        }
+
+        /* Primary/Call Button (Sleek Purple theme) */
+        .popup-btn.btn-call {
+            background: #6c2b5e; /* Signature purple */
+            color: #ffffff !important;
+        }
+        
+        .popup-btn.btn-call:hover {
+            background: #532048;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(108, 43, 94, 0.3);
+        }
+
+        /* Secondary/Enquire Button (Signature Gold theme) */
+        .popup-btn.btn-enquire {
+            background: #c89836; /* Signature gold */
+            color: #ffffff !important;
+        }
+
+        .popup-btn.btn-enquire:hover {
+            background: #af8129;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(200, 152, 54, 0.3);
+        }
+
+        .btn-icon {
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .popup-btn:hover .btn-icon {
+            transform: scale(1.15);
+        }
+
+        /* Close Button (X Cross) */
+        .popup-close-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid #ede8dc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #2b2628;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 10005;
+            outline: none;
+        }
+
+        .popup-close-btn:hover {
+            transform: scale(1.1) rotate(90deg);
+            background: #ffffff;
+            border-color: #6c2b5e; /* Primary purple color */
+            color: #6c2b5e;
+        }
+
+        /* Animation Elements Wrapper */
+        .popup-animations-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9995;
+            overflow: hidden;
+        }
+
+        /* Flying Airplane Styles (Bigger & Slower) */
+        .flight-container {
+            position: absolute;
+            width: 240px;
+            height: 240px;
+            left: -270px;
+            bottom: -270px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .flight-container.animate {
+            opacity: 1;
+            animation: flightPath 11s linear forwards; /* Slower 11s duration */
+        }
+
+        .flight-svg {
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.25));
+        }
+
+        /* Diagonal Flight Path */
+        @keyframes flightPath {
+            0% {
+                transform: translate(0, 0) rotate(45deg);
+            }
+            100% {
+                transform: translate(calc(100vw + 400px), calc(-100vh - 400px)) rotate(45deg);
+            }
+        }
+
+        /* Ground-Based Flowerpot Firecrackers */
+        .flowerpot {
+            position: absolute;
+            bottom: 0;
+            width: 30px;
+            height: 35px;
+            z-index: 10002;
+            pointer-events: none;
+        }
+        .left-pot.outer-pot {
+            left: 3vw;
+        }
+        .left-pot.inner-pot {
+            left: 10vw;
+        }
+        .right-pot.inner-pot {
+            right: 10vw;
+        }
+        .right-pot.outer-pot {
+            right: 3vw;
+        }
+        .pot-cone {
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 35px solid #d35400; /* Terracotta clay pot color */
+            position: relative;
+        }
+        .inner-pot .pot-cone {
+            border-left: 12px solid transparent;
+            border-right: 12px solid transparent;
+            border-bottom: 28px solid #e67e22; /* Slightly smaller clay pot */
+        }
+        .pot-cone::after {
+            content: '';
+            position: absolute;
+            bottom: -35px;
+            left: -4px;
+            width: 8px;
+            height: 4px;
+            background: #ff5500;
+            border-radius: 2px 2px 0 0;
+            box-shadow: 0 0 8px #ff5500;
+        }
+        .inner-pot .pot-cone::after {
+            bottom: -28px;
+            left: -3px;
+            width: 6px;
+            height: 3px;
+        }
+
+        /* Flowerpot Sparks Fountain */
+        .flowerpot-spark {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9996;
+            animation: flowerpotSparkFly 1.2s cubic-bezier(0.1, 0.8, 0.2, 1) forwards;
+        }
+        @keyframes flowerpotSparkFly {
+            0% {
+                transform: translate(0, 0) scale(1.5);
+                opacity: 1;
+            }
+            80% {
+                opacity: 0.9;
+            }
+            100% {
+                transform: translate(var(--dx), var(--dy)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Confetti Particle Styling */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50% 20% 50% 50%;
+            opacity: 0.95;
+            pointer-events: none;
+            z-index: 9996;
+            animation: confettiFly 3s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+        }
+
+        @keyframes confettiFly {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            80% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(calc(-45vh - 100px)) translateX(var(--x-drift)) rotate(var(--r-drift));
+                opacity: 0;
+            }
+        }
+
+        /* Rocket & Blasting Fireworks Styling */
+        .rocket {
+            position: absolute;
+            width: 6px;
+            height: 20px;
+            background: linear-gradient(to top, #ff3333, #f1c40f);
+            border-radius: 2px;
+            pointer-events: none;
+            z-index: 9996;
+            animation: rocketLaunch 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            box-shadow: 0 0 8px #f1c40f;
+        }
+        .rocket::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 1.5px;
+            width: 3px;
+            height: 12px;
+            background: linear-gradient(to bottom, #ff9900, transparent);
+        }
+        @keyframes rocketLaunch {
+            0% {
+                transform: translateY(0) scaleY(1);
+                opacity: 1;
+            }
+            90% {
+                transform: translateY(var(--target-y)) scaleY(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(var(--target-y)) scaleY(0);
+                opacity: 0;
+            }
+        }
+
+        .spark {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9996;
+            animation: sparkBurst 1.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+            box-shadow: 0 0 8px currentColor, 0 0 16px currentColor;
+        }
+        @keyframes sparkBurst {
+            0% {
+                transform: translate(0, 0) scale(1.5);
+                opacity: 1;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--dx), var(--dy)) scale(0);
+                opacity: 0;
+            }
+        }
+
+        /* Celebration People Panel at the Bottom */
+        .celebration-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 160px;
+            pointer-events: none;
+            z-index: 10000;
+            overflow: visible;
+        }
+
+        .char-row {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            padding: 0 3vw;
+            height: 140px;
+            overflow: visible;
+        }
+
+        .char-row.back-row {
+            bottom: 25px;
+            z-index: 9998;
+        }
+
+        .char-row.front-row {
+            bottom: 0;
+            z-index: 10000;
+        }
+
+        /* Waving/Popping Cartoon Characters */
+        .celebration-char {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 75px;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .popup-overlay.active .char-row.front-row .celebration-char {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .char-row.back-row .celebration-char {
+            transform: translateY(40px) scale(0.8);
+        }
+
+        .popup-overlay.active .char-row.back-row .celebration-char {
+            opacity: 0.85;
+            transform: translateY(0) scale(0.8);
+        }
+
+        .char-avatar {
+            position: relative;
+            width: 50px;
+            height: 70px;
+        }
+
+        /* Head */
+        .char-head {
+            position: absolute;
+            top: 10px;
+            left: 12px;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            z-index: 5;
+        }
+
+        .skin-1 { background: #ffd8b3; }
+        .skin-2 { background: #f0c294; }
+        .skin-3 { background: #e0ac69; }
+
+        /* Eyes */
+        .char-eye {
+            position: absolute;
+            top: 9px;
+            width: 2.5px;
+            height: 2.5px;
+            background: #2b2628;
+            border-radius: 50%;
+        }
+        .char-eye.left { left: 7px; }
+        .char-eye.right { right: 7px; }
+
+        /* Smile */
+        .char-smile {
+            position: absolute;
+            bottom: 4px;
+            left: 9px;
+            width: 8px;
+            height: 5px;
+            border-bottom: 2.2px solid #2b2628;
+            border-radius: 0 0 50% 50% / 0 0 100% 100%;
+        }
+
+        /* Hair styles */
+        .char-hair {
+            position: absolute;
+            top: 5px;
+            left: 9px;
+            width: 32px;
+            height: 16px;
+            border-radius: 20px 20px 0 0;
+            background: #2b2628;
+            z-index: 6;
+        }
+        .char-hair.style-2 { background: #8e6c50; border-radius: 10px 20px 0 10px; }
+        .char-hair.style-3 { background: #dca72a; border-radius: 12px 12px 6px 6px; }
+
+        /* Shirt Body */
+        .char-body {
+            position: absolute;
+            bottom: 0;
+            left: 7px;
+            width: 36px;
+            height: 38px;
+            border-radius: 16px 16px 0 0;
+            z-index: 4;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .shirt-1 { background: #6c2b5e; }
+        .shirt-2 { background: #007672; }
+        .shirt-3 { background: #c89836; }
+        .shirt-4 { background: #e85c84; }
+
+        /* Arms */
+        .char-arm {
+            position: absolute;
+            width: 7px;
+            height: 22px;
+            border-radius: 4px;
+            z-index: 3;
+        }
+
+        /* Waving Arm (Climbing up, waving) */
+        .char-arm.waving {
+            top: 40px;
+            right: -3px;
+            animation: waveHand 1.1s ease-in-out infinite alternate;
+            transform-origin: top left;
+            transform: rotate(-120deg);
+        }
+
+        @keyframes waveHand {
+            0% {
+                transform: rotate(-105deg);
+            }
+            100% {
+                transform: rotate(-145deg);
+            }
+        }
+
+        /* Confetti shooter arm */
+        .char-arm.popper-arm {
+            top: 42px;
+            left: -3px;
+            transform: rotate(35deg);
+        }
+
+        .popper-tube {
+            position: absolute;
+            bottom: -8px;
+            left: -2px;
+            width: 11px;
+            height: 15px;
+            background: linear-gradient(135deg, #c89836, #e5c477);
+            border-radius: 2px;
+            transform: rotate(-45deg);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        }
+
+        /* Left resting arm */
+        .char-arm.left-arm {
+            top: 42px;
+            left: -3px;
+        }
+
+        /* Speech Bubble ("Bye Bye!") */
+        .speech-bubble {
+            position: absolute;
+            top: -38px;
+            background: #ffffff;
+            border: 1px solid #ede8dc;
+            color: #6c2b5e;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 5px 9px;
+            border-radius: 10px;
+            white-space: nowrap;
+            box-shadow: 0 4px 10px rgba(108, 43, 94, 0.1);
+            opacity: 0;
+            transform: translateY(12px) scale(0.8);
+            animation: bubbleSway 2.2s ease-in-out infinite alternate;
+            animation-delay: inherit;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .popup-overlay.active .speech-bubble {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition-delay: inherit;
+        }
+
+        .speech-bubble::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 8px;
+            height: 8px;
+            background: #ffffff;
+            border-right: 1px solid #ede8dc;
+            border-bottom: 1px solid #ede8dc;
+        }
+
+        @keyframes bubbleSway {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-4px) scale(1.04); }
+        }
+
+        /* Responsive Adjustments for Celebration Characters */
+        @media (max-width: 992px) {
+            .celebration-char {
+                width: 65px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .celebration-footer {
+                height: 130px;
+            }
+            .char-row {
+                padding: 0 2vw;
+                height: 110px;
+            }
+            .char-row.back-row {
+                bottom: 15px;
+                display: none; /* Hide background row on tablet/mobile screens */
+            }
+            .celebration-char {
+                width: 48px;
+            }
+            .char-row.front-row .celebration-char:nth-child(3n) {
+                display: none; /* Hide every 3rd character in front row on tablet */
+            }
+            .char-avatar {
+                width: 40px;
+                height: 55px;
+            }
+            .char-head {
+                width: 22px;
+                height: 22px;
+                left: 9px;
+            }
+            .char-hair {
+                width: 26px;
+                left: 7px;
+            }
+            .char-body {
+                width: 28px;
+                height: 30px;
+                left: 6px;
+            }
+            .char-arm.waving {
+                top: 32px;
+                right: -2px;
+            }
+            .char-arm.popper-arm {
+                top: 34px;
+            }
+            .char-arm.left-arm {
+                top: 34px;
+            }
+            .speech-bubble {
+                top: -34px;
+                font-size: 0.6rem;
+                padding: 3px 6px;
+            }
+            .popup-card {
+                margin-bottom: 110px; /* Leave more spacing for small views */
+            }
+            .popup-close-btn {
+                top: -55px !important; /* Position clearly above the image on mobile view */
+                left: 10px !important;  /* Position slightly inset from left edge of the card */
+                background: #ffffff !important;
+                border: 2px solid #6c2b5e !important;
+                color: #6c2b5e !important;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Only show 4 characters from front row on small mobile screens */
+            .char-row.front-row .celebration-char:nth-child(even) {
+                display: none;
+            }
+        }
+    </style>
+
+    <!-- Scripting Block -->
+    <script>
+        (function() {
+            let popupTimer = null;
+            const delayMs = 3000; // 3-second delay
+
+            // DOM elements
+            const overlay = document.getElementById('promo-popup');
+            const closeBtn = overlay.querySelector('.popup-close-btn');
+            const flightContainer = overlay.querySelector('.flight-container');
+            const balloonContainer = overlay.querySelector('.balloon-container');
+
+            // Initial setup
+            // initEvents();
+
+            function initEvents() {
+                // Listen to clicks on the entire document and check if it's a button or link
+                document.addEventListener('click', (e) => {
+                    const clickTarget = e.target.closest('button, a, input[type="submit"], input[type="button"], .mobile-menu-btn');
+                    if (clickTarget) {
+                        // If it's the close button, don't trigger the timer!
+                        if (clickTarget.closest('.popup-close-btn')) return;
+                        
+                        console.log('Button/Link clicked, scheduling popup in 3 seconds');
+                        startPopupTimer();
+                    }
+                });
+
+                // Close button click
+                closeBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closePopup();
+                });
+
+                // Close when clicking overlay backdrop outside the card
+                overlay.addEventListener('click', (e) => {
+                    if (e.target === overlay) {
+                        closePopup();
+                    }
+                });
+
+                // Close when clicking Enquire Now button (it scrolls to #contact on same page)
+                const enquireBtn = overlay.querySelector('.btn-enquire');
+                if (enquireBtn) {
+                    enquireBtn.addEventListener('click', () => {
+                        closePopup();
+                    });
+                }
+            }
+
+            // Start delay timer
+            function startPopupTimer() {
+                // Don't schedule if popup is already open
+                if (overlay.classList.contains('active')) return;
+
+                // Clear any active timer to debounce rapid button clicks
+                if (popupTimer) clearTimeout(popupTimer);
+
+                popupTimer = setTimeout(() => {
+                    showPopup();
+                }, delayMs);
+            }
+
+            // Save scroll position for mobile lock
+                       // Show Popup and trigger animations
+            function showPopup() {
+                console.log('Displaying popup and starting animations');
+                
+                // Lock scrolling on mobile without jumping
+                scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+                document.body.style.position = 'fixed';
+                document.body.style.top = `-${scrollPosition}px`;
+                document.body.style.left = '0';
+                document.body.style.width = '100%';
+                document.body.classList.add('popup-open');
+                
+                overlay.classList.add('active');
+                
+                // Trigger airplane flight
+                triggerFlight();
+                
+                // Start ground flowerpot firecrackers
+                startFlowerpots();
+
+                // Trigger surprise confetti pop
+                popConfetti();
+
+                // Start celebration rockets and blasting
+                startFireworks();
+            }
+
+            // Close Popup and stop animations
+            function closePopup() {
+                console.log('Closing popup and clearing animations');
+                overlay.classList.remove('active');
+                
+                // Restore scroll position
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.left = '';
+                document.body.style.width = '';
+                document.body.classList.remove('popup-open');
+                
+                // Instant scroll restore
+                document.documentElement.style.scrollBehavior = 'auto';
+                window.scrollTo(0, scrollPosition);
+                document.documentElement.style.scrollBehavior = '';
+                
+                flightContainer.classList.remove('animate');
+                balloonContainer.innerHTML = '';
+                
+                // Clear any active confetti
+                const confettiElements = overlay.querySelectorAll('.confetti');
+                confettiElements.forEach(el => el.remove());
+
+                // Stop celebration rockets and blasting
+                stopFireworks();
+                
+                // Stop ground flowerpot firecrackers
+                stopFlowerpots();
+            }
+
+            // Reset flight class to re-animate
+            function triggerFlight() {
+                flightContainer.classList.remove('animate');
+                void flightContainer.offsetWidth; // Force CSS reflow to restart keyframe
+                flightContainer.classList.add('animate');
+            }
+
+            // Ground-Based Flowerpot Firecrackers Logic
+            let flowerpotInterval = null;
+
+            function startFlowerpots() {
+                if (flowerpotInterval) clearInterval(flowerpotInterval);
+                flowerpotInterval = setInterval(() => {
+                    if (overlay.classList.contains('active')) {
+                        // Outer pots (higher spray)
+                        createFlowerpotSpark(true, '3vw', 15, 35, 1.1);   // Outer Left
+                        createFlowerpotSpark(false, '3vw', 15, 35, 1.1);  // Outer Right
+                        
+                        // Inner pots (slightly lower, staggered)
+                        if (Math.random() > 0.1) {
+                            createFlowerpotSpark(true, '10vw', 12, 28, 0.75);  // Inner Left
+                            createFlowerpotSpark(false, '10vw', 12, 28, 0.75); // Inner Right
+                        }
+                    }
+                }, 30); // Continuous spray of golden sparks every 30ms for massive celebration!
+            }
+
+            function stopFlowerpots() {
+                if (flowerpotInterval) {
+                    clearInterval(flowerpotInterval);
+                    flowerpotInterval = null;
+                }
+                const activeFlowerpotSparks = overlay.querySelectorAll('.flowerpot-spark');
+                activeFlowerpotSparks.forEach(el => el.remove());
+            }
+
+            function createFlowerpotSpark(isLeft, basePos, offsetPx, nozzleHeight, heightScale) {
+                const spark = document.createElement('div');
+                spark.className = 'flowerpot-spark';
+                
+                // Position at the nozzle tip of the cone
+                if (isLeft) {
+                    spark.style.left = `calc(${basePos} + ${offsetPx}px)`;
+                } else {
+                    spark.style.right = `calc(${basePos} + ${offsetPx}px)`;
+                }
+                spark.style.bottom = `${nozzleHeight}px`;
+                
+                // Golden fire palette colors
+                const colors = ['#ffd700', '#ffae00', '#ff7b00', '#ff4800', '#ffffff', '#fff3cc'];
+                const sparkColor = colors[Math.floor(Math.random() * colors.length)];
+                spark.style.backgroundColor = sparkColor;
+                spark.style.boxShadow = `0 0 6px ${sparkColor}, 0 0 12px ${sparkColor}`;
+                
+                // Physics: shoots upwards, height scaled by heightScale
+                const dy = -((100 + Math.random() * 230) * heightScale); // vertical height scaled
+                const dx = (Math.random() - 0.5) * 110 * heightScale;   // horizontal spread scaled
+                
+                spark.style.setProperty('--dx', `${dx}px`);
+                spark.style.setProperty('--dy', `${dy}px`);
+                
+                // Spark particle sizing
+                const size = (2.5 + Math.random() * 3.5) * heightScale; // scaled size
+                spark.style.width = `${size}px`;
+                spark.style.height = `${size}px`;
+                
+                // Organic duration
+                spark.style.animationDuration = `${0.6 + Math.random() * 0.5}s`;
+                
+                balloonContainer.appendChild(spark);
+                
+                setTimeout(() => {
+                    spark.remove();
+                }, 1200);
+            }
+
+            // Surprise Confetti Blast from Confetti Popper characters
+            function popConfetti() {
+                // Emitter positions correspond to popper characters in both rows
+                const emitterPositions = ['5vw', '18vw', '30vw', '42vw', '55vw', '68vw', '80vw', '92vw'];
+                const colors = ['#f1c40f', '#e74c3c', '#3498db', '#2ecc71', '#9b59b6', '#e67e22', '#ff789c'];
+                const particleCount = 15; // particles per popper
+
+                emitterPositions.forEach(pos => {
+                    for (let i = 0; i < particleCount; i++) {
+                        const particle = document.createElement('div');
+                        particle.className = 'confetti';
+                        particle.style.left = pos;
+                        particle.style.bottom = '85px'; // Shooter tube height
+                        
+                        // Random color
+                        const color = colors[Math.floor(Math.random() * colors.length)];
+                        particle.style.backgroundColor = color;
+                        
+                        // Random size
+                        const size = 6 + Math.random() * 7;
+                        particle.style.width = `${size}px`;
+                        particle.style.height = `${size}px`;
+                        particle.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+                        
+                        // Random horizontal speed drift
+                        const xDrift = (Math.random() - 0.5) * 250;
+                        particle.style.setProperty('--x-drift', `${xDrift}px`);
+                        
+                        // Random rotation spin
+                        const rDrift = `${(Math.random() - 0.5) * 720}deg`;
+                        particle.style.setProperty('--r-drift', rDrift);
+                        
+                        // Random animation duration (2s - 4s)
+                        particle.style.animationDuration = `${2 + Math.random() * 2}s`;
+                        
+                        // Random launch delay for organic dispersion
+                        particle.style.animationDelay = `${Math.random() * 0.4}s`;
+                        
+                        balloonContainer.appendChild(particle);
+                    }
+                });
+            }
+
+            // Rocket & Blasting Fireworks Logic
+            let rocketInterval = null;
+
+            function startFireworks() {
+                // Initial grand blast: Launch 10 rockets rapidly
+                launchRockets(10);
+                
+                // Continuous rapid repeating launches: launch a new rocket every 300ms
+                if (rocketInterval) clearInterval(rocketInterval);
+                rocketInterval = setInterval(() => {
+                    if (overlay.classList.contains('active')) {
+                        createRocket();
+                    }
+                }, 300);
+            }
+
+            function stopFireworks() {
+                if (rocketInterval) clearInterval(rocketInterval);
+                const activeElements = overlay.querySelectorAll('.rocket, .spark');
+                activeElements.forEach(el => el.remove());
+            }
+
+            function launchRockets(count) {
+                for (let i = 0; i < count; i++) {
+                    setTimeout(() => {
+                        if (overlay.classList.contains('active')) {
+                            createRocket();
+                        }
+                    }, i * 180); // Staggered rapidly by 180ms
+                }
+            }
+
+            function createRocket() {
+                const rocket = document.createElement('div');
+                rocket.className = 'rocket';
+                // Entire width coverage: 5% to 95%
+                const startLeft = 5 + Math.random() * 90;
+                rocket.style.left = `${startLeft}%`;
+                rocket.style.bottom = '120px';
+                
+                // Entire display height coverage: 150px to 550px
+                const targetY = -(150 + Math.random() * 400);
+                rocket.style.setProperty('--target-y', `${targetY}px`);
+                
+                balloonContainer.appendChild(rocket);
+                
+                setTimeout(() => {
+                    if (rocket.parentNode) {
+                        explodeRocket(startLeft, 120 - targetY);
+                        rocket.remove();
+                    }
+                }, 1200);
+            }
+
+            function explodeRocket(pctLeft, pxBottom) {
+                const sparkCount = 45; // Dense fireworks celebration!
+                const colors = ['#f1c40f', '#e74c3c', '#3498db', '#2ecc71', '#e67e22', '#ff789c', '#9b59b6', '#ffffff'];
+                const explodeColor = colors[Math.floor(Math.random() * colors.length)];
+                const alternateColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                for (let i = 0; i < sparkCount; i++) {
+                    const spark = document.createElement('div');
+                    spark.className = 'spark';
+                    spark.style.left = `calc(${pctLeft}% + ${(Math.random() - 0.5) * 10}px)`;
+                    spark.style.bottom = `${pxBottom}px`;
+                    spark.style.backgroundColor = Math.random() > 0.4 ? explodeColor : alternateColor;
+                    
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = 40 + Math.random() * 160; // Wider blast spread
+                    const dx = Math.cos(angle) * distance;
+                    const dy = Math.sin(angle) * distance;
+                    
+                    spark.style.setProperty('--dx', `${dx}px`);
+                    spark.style.setProperty('--dy', `${dy}px`);
+                    
+                    const size = 3.5 + Math.random() * 4.5; // Bigger spark sizes
+                    spark.style.width = `${size}px`;
+                    spark.style.height = `${size}px`;
+                    
+                    spark.style.animationDuration = `${0.8 + Math.random() * 0.8}s`;
+                    
+                    balloonContainer.appendChild(spark);
+                    
+                    setTimeout(() => {
+                        spark.remove();
+                    }, 1600);
+                }
+            }
+        })();
+    </script>
+
+    <!-- Gallery Filtering Javascript -->
+    <script>
+        (function() {
+            const filterTabs = document.querySelectorAll('.filter-tab');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            // Filter Logic
+            filterTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from other tabs
+                    filterTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    const category = tab.getAttribute('data-filter');
+
+                    // Filter items
+                    galleryItems.forEach(item => {
+                        const itemCat = item.getAttribute('data-category');
+                        if (category === 'all' || itemCat === category) {
+                            item.classList.remove('hide');
+                        } else {
+                            item.classList.add('hide');
+                        }
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
