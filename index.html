@@ -763,41 +763,7 @@
             background-color: var(--bg-alt);
         }
 
-        .gallery-filter-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
 
-        .filter-tab {
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 0.95rem;
-            padding: 10px 24px;
-            border-radius: 30px;
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-            cursor: pointer;
-            transition: var(--transition);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
-            outline: none;
-        }
-
-        .filter-tab:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
-            transform: translateY(-1px);
-        }
-
-        .filter-tab.active {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            color: #ffffff;
-            box-shadow: 0 4px 12px rgba(108, 43, 94, 0.25);
-        }
 
         /* Bento Grid Layout */
         .gallery-bento-grid {
@@ -1065,13 +1031,7 @@
             <h2 class="section-title" style="text-align: center; margin-bottom: 20px;">On-Site <span>Gallery</span></h2>
             <p style="text-align: center; color: var(--text-muted); max-width: 600px; margin: 0 auto 40px auto; font-size: 1.1rem;">Explore real-time development progress, structural layouts, and natural landscapes directly from the site of The Iris County.</p>
 
-            <!-- Interactive Category Tabs -->
-            <div class="gallery-filter-tabs">
-                <button class="filter-tab active" data-filter="all">All Photos</button>
-                <button class="filter-tab" data-filter="development">Site Development</button>
-                <button class="filter-tab" data-filter="office">Office & Signage</button>
-                <button class="filter-tab" data-filter="landscape">Landscape</button>
-            </div>            <!-- Bento Grid -->
+            <!-- Bento Grid -->
             <div class="gallery-bento-grid">
                 <!-- Excavation: Span 2 cols -->
                 <div class="gallery-item span-2-col" data-category="development">
@@ -1079,12 +1039,12 @@
                 </div>
 
                 <!-- Container Office 1: Span 1 col -->
-                <div class="gallery-item" data-category="office">
+                <div class="gallery-item" data-category="road-hoarding">
                     <img src="images/iris-county3.jpg" alt="TAG Projects Cabin" class="gallery-item-img">
                 </div>
 
                 <!-- Billboard: Span 1 col -->
-                <div class="gallery-item" data-category="office">
+                <div class="gallery-item" data-category="road-hoarding">
                     <img src="images/iris-county2.jpg" alt="TAG IRIS Advertisement Hoarding" class="gallery-item-img">
                 </div>
 
@@ -2429,33 +2389,5 @@
         })();
     </script>
 
-    <!-- Gallery Filtering Javascript -->
-    <script>
-        (function() {
-            const filterTabs = document.querySelectorAll('.filter-tab');
-            const galleryItems = document.querySelectorAll('.gallery-item');
-
-            // Filter Logic
-            filterTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    // Remove active class from other tabs
-                    filterTabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-
-                    const category = tab.getAttribute('data-filter');
-
-                    // Filter items
-                    galleryItems.forEach(item => {
-                        const itemCat = item.getAttribute('data-category');
-                        if (category === 'all' || itemCat === category) {
-                            item.classList.remove('hide');
-                        } else {
-                            item.classList.add('hide');
-                        }
-                    });
-                });
-            });
-        })();
-    </script>
 </body>
 </html>
