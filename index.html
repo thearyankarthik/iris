@@ -989,7 +989,7 @@
         /* Enquiry Section styling */
         .enquiry-section {
             padding: 100px 0;
-            background-color: var(--bg-color);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #2f1027 100%);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -1023,6 +1023,7 @@
             margin-bottom: 20px;
             line-height: 1.2;
             font-family: var(--font-body);
+            color: #ffffff;
         }
 
         .enquiry-info h2 span {
@@ -1030,7 +1031,7 @@
         }
 
         .enquiry-info p {
-            color: var(--text-muted);
+            color: #e5ddeb;
             font-size: 1.1rem;
             line-height: 1.6;
             margin-bottom: 35px;
@@ -1061,6 +1062,18 @@
             transform: translateX(5px);
         }
 
+        /* Call button only acts as pointer/link on mobile */
+        @media (min-width: 769px) {
+            .contact-card-item {
+                cursor: default;
+            }
+        }
+        @media (max-width: 768px) {
+            .contact-card-item {
+                cursor: pointer;
+            }
+        }
+
         .contact-card-icon {
             width: 50px;
             height: 50px;
@@ -1076,7 +1089,7 @@
 
         .contact-card-details h4 {
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--secondary-color);
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 4px;
@@ -1143,8 +1156,8 @@
         .enquiry-form-input {
             width: 100%;
             padding: 16px 20px 16px 50px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 12px;
             color: #ffffff;
             font-family: var(--font-body);
@@ -1154,14 +1167,27 @@
             box-sizing: border-box;
         }
 
+        .enquiry-form-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
         .enquiry-form-input:focus {
-            background: rgba(255, 255, 255, 0.04);
+            background: rgba(255, 255, 255, 0.1);
             border-color: var(--secondary-color);
-            box-shadow: 0 0 15px rgba(200, 152, 54, 0.15);
+            box-shadow: 0 0 15px rgba(200, 152, 54, 0.25);
         }
 
         .enquiry-form-input:focus + i {
             color: var(--secondary-color);
+        }
+
+        /* Webkit autofill overrides to ensure dark background with white text */
+        .enquiry-form-input:-webkit-autofill,
+        .enquiry-form-input:-webkit-autofill:hover, 
+        .enquiry-form-input:-webkit-autofill:focus {
+            -webkit-text-fill-color: #ffffff !important;
+            -webkit-box-shadow: 0 0 0px 1000px #4f1e44 inset !important;
+            transition: background-color 5000s ease-in-out 0s;
         }
 
         .plot-pills-container {
@@ -1618,7 +1644,7 @@
                     <p>Ready to invest in Vijayawada's premium gated community? Fill out the form to request a callback or schedule an onsite visit with our dedicated real estate advisors.</p>
                     
                     <div class="enquiry-contact-cards">
-                        <a href="tel:+919000259211" class="contact-card-item">
+                        <a href="tel:+919000259211" class="contact-card-item" onclick="if(window.innerWidth > 768) { event.preventDefault(); }">
                             <div class="contact-card-icon">
                                 <i class="fas fa-phone-alt"></i>
                             </div>
